@@ -4,7 +4,7 @@ import { Button, VerticalBox , LineEdit} from "std-widgets.slint";
 export component AppWindow inherits Window {
 
     in property <string> results: "";
-    callback calc-volym(string);
+    callback calc-volym(string, string);
 
     background: #172438;
     GridLayout {
@@ -28,7 +28,7 @@ export component AppWindow inherits Window {
                 placeholder-text: "Enter OG here";
             }
         }
-        // Instert FG
+        // Insert FG
         Row {
             fg := LineEdit {
                 horizontal-alignment: center;
@@ -41,7 +41,7 @@ export component AppWindow inherits Window {
             Button {
                 text: "Calculate";
                 primary: true;
-                clicked => {calc-volym(og.text)}
+                clicked => {calc-volym(og.text, fg.text)}
             }
         }  
         // The result       

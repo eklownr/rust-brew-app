@@ -1,16 +1,60 @@
-import { Button, VerticalBox } from "std-widgets.slint";
+import { Button, VerticalBox , LineEdit} from "std-widgets.slint";
+
 
 export component AppWindow inherits Window {
-    in-out property<int> counter: 42;
-    callback request-increase-value();
-    VerticalBox {
-        Text {
-            text: "Counter: \{root.counter}";
+
+    in property <string> results: "";
+    callback calc-volym(string);
+
+    background: #172438;
+    GridLayout {
+        spacing: 25px;
+        padding: 50px;
+        // Explanation text for the app
+        Row {
+            Text {
+                text: "Calculate Vol %";
+                horizontal-alignment: center;
+                font-size: 24px;
+                font-weight: 900;
+                color: #fde185;
+            }
         }
-        Button {
-            text: "Increase value";
-            clicked => {
-                root.request-increase-value();
+        // Insert OG
+        Row {
+            og := LineEdit {
+                horizontal-alignment: center;
+                font-size: 16px;
+                placeholder-text: "Enter OG here";
+            }
+        }
+        // Instert FG
+        Row {
+            fg := LineEdit {
+                horizontal-alignment: center;
+                font-size: 16px;
+                placeholder-text: "Enter FG here";
+            }   
+        }
+        // Button to calculate
+        Row {
+            Button {
+                text: "Calculate";
+                primary: true;
+                clicked => {calc-volym(og.text)}
+            }
+        }  
+        // The result       
+        VerticalBox {
+            Rectangle {
+                height: 100px;
+                background: #f2f2f2;
+                Text {
+                    color: black;
+                    font-size: 16px;
+                    font-weight: 500;
+                    text: root.results;
+                }
             }
         }
     }

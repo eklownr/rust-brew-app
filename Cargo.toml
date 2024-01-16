@@ -4,6 +4,7 @@ version = "0.1.0"
 authors = ["eklownr <eklownr@gmail.com>"]
 edition = "2021"
 build = "build.rs"
+description = "Desktop app that calculate vol % in beer"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
@@ -12,3 +13,7 @@ slint = "1.0"
 
 [build-dependencies]
 slint-build = "1.0"
+
+[package.metadata.bundle]
+name = "rust-brew-app"
+identifier = "io.github.eklownr.rust-brew-app"

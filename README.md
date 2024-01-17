@@ -1,9 +1,10 @@
 # Simple home brew app writen in rust for backend and slint for the user interface.
 
 ## Usage
-cargo run
-... to run the app ... 
-or ...
+To run the app:
+     cargo run
+     ```
+
 
 1. Install Rust by following the [Rust Getting Started Guide](https://www.rust-lang.org/learn/get-started).
    Once this is done, you should have the ```rustc``` compiler and the ```cargo``` build system installed in your path.

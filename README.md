@@ -2,6 +2,7 @@
 
 ## Usage
 To run the app:
+     ```
      cargo run
      ```
 
